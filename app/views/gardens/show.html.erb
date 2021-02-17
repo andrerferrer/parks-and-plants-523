@@ -9,17 +9,21 @@
   </div>
 </div>
 
-<h3>Plants</h3>
+<div class="container">
 
-<% plants = @garden.plants %>
-<ul>
-  <% plants.each do |plant| %>
-    <li>
-      <p>
-        <%= plant.name %>
-        <%= link_to "❌", plant_path(plant.id), method: :delete %>
-      </p>
-      <img src="<%= plant.picture_url %>" alt="">
-    </li>
-  <% end %>
-</ul>
+  <h3>Plants</h3>
+
+  <% plants = @garden.plants %>
+  <ul>
+    <% plants.each do |plant| %>
+      <li>
+        <p>
+          <%= plant.name %>
+          <%= link_to "❌", plant_path(plant.id), method: :delete %>
+        </p>
+        <img src="<%= plant.picture_url %>" alt="">
+      </li>
+    <% end %>
+  </ul>
+
+</div>
