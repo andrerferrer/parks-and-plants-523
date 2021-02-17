@@ -12,3 +12,17 @@
 
 <%= link_to 'Edit', edit_garden_path(@garden) %> |
 <%= link_to 'Back', gardens_path %>
+
+<h3>Plants</h3>
+
+<% plants = @garden.plants %>
+<ul>
+  <% plants.each do |plant| %>
+    <li>
+      <p>
+        <%= plant.name %>
+      </p>
+      <img src="<%= plant.picture_url %>" alt="">
+    </li>
+  <% end %>
+</ul>
