@@ -11,7 +11,8 @@
 </p>
 
 <%= link_to 'Edit', edit_garden_path(@garden) %> |
-<%= link_to 'Back', gardens_path %>
+<%= link_to 'Back', gardens_path %> |
+<%= link_to 'Add a Plant', new_garden_plant_path(@garden) %>
 
 <h3>Plants</h3>
 
@@ -21,6 +22,7 @@
     <li>
       <p>
         <%= plant.name %>
+        <%= link_to "❌", plant_path(plant.id), method: :delete %>
       </p>
       <img src="<%= plant.picture_url %>" alt="">
     </li>
