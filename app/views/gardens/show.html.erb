@@ -1,18 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @garden.name %>
-</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden.banner_url %>);">
+  <div class="container">
+    <h1><%= @garden.name %></h1>
+    <%= link_to 'Edit', edit_garden_path(@garden) %> |
+    <%= link_to 'Back', gardens_path %> |
+    <%= link_to 'Add a Plant', new_garden_plant_path(@garden) %>
+  </div>
+</div>
 
-<p>
-  <strong>Banner url:</strong>
-  <%= @garden.banner_url %>
-</p>
+<style>
 
-<%= link_to 'Edit', edit_garden_path(@garden) %> |
-<%= link_to 'Back', gardens_path %> |
-<%= link_to 'Add a Plant', new_garden_plant_path(@garden) %>
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+  }
+
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+</style>
 
 <h3>Plants</h3>
 
